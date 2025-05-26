@@ -7,7 +7,7 @@ const deleteProducts = async () => {
     const products = res.data;
 
     for (let product of products) {
-        await axios.delete(`https://fruitapp-wwe3.onrender.com/product/${product.id}`);
+        await axios.delete(`${url}/${product.id}`);
     }
 
     location.reload();
@@ -23,22 +23,22 @@ const loadProducts = async () => {
 
     let res = await axios.get(url);
     const products = res.data;
-    var len = products.length;
+    const len = products.length;
 
     if (len > InitialCount + 1) {
         $("#1").css("display", "none");
         $("#home").css("display", "grid");
         $("#2").css("display", "grid");
 
-        var payable = 0;
-        var totalWeight = 0;
+        let payable = 0;
+        let totalWeight = 0;
 
         for (let product of products) {
             payable += parseFloat(product.payable);
-            totalWeight += parseFloat(product.total_weight || 0);  // Tính tổng khối lượng
+            totalWeight += parseFloat(product.total_weight || 0);
         }
 
-        var product = products.pop();
+        const product = products.pop();
         const x = `
         <section>
             <div class="card card-long animated fadeInUp once">
@@ -53,7 +53,7 @@ const loadProducts = async () => {
                 </div>
                 <div class="span3">Units</div>
                 <div class="card__unit">
-                    <span>${product.taken} ${product.units}</span>
+                    <span>${product.taken}</span> <!-- Không hiển thị chữ units -->
                 </div>
                 <div class="span4">Payable</div>
                 <div class="card__amount">
@@ -63,15 +63,14 @@ const loadProducts = async () => {
         </section>
         `;
 
-        // Render sản phẩm
         document.getElementById('home').innerHTML += x;
 
-        // Cập nhật checkout và khối lượng tổng
+        // Giao diện TỔNG KHỐI LƯỢNG trong ô
         document.getElementById('2').innerHTML = `
-            CHECKOUT $${payable}
-            <div style="margin-top: 10px; font-weight: bold; color: #555; font-size: 14px;">
-                TỔNG KHỐI LƯỢNG: ${totalWeight} g
+            <div class="card__amount" style="margin-bottom: 10px; font-size: 14px;">
+                TỔNG KHỐI LƯỢNG: ${totalWeight} G
             </div>
+            <button class="checkout" onclick="checkout()">CHECKOUT $${payable}</button>
         `;
 
         InitialCount += 1;
