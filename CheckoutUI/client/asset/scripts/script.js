@@ -43,19 +43,19 @@ const loadProducts = async () => {
         <section>
             <div class="card card-long animated fadeInUp once">
                 <img src="asset/img/${product.id}.jpg" class="album">
-                <div class="span1">Product Name</div>
+                <div class="span1">Tên trái cây</div>
                 <div class="card__product">
                     <span>${product.name}</span>
                 </div>
-                <div class="span2">Per Unit</div>
+                <div class="span2">Giá/trái</div>
                 <div class="card__price">
                     <span>${product.price}</span>
                 </div>
-                <div class="span3">Units</div>
+                <div class="span3">Số lượng</div>
                 <div class="card__unit">
                     <span>${product.taken}</span> <!-- Không hiển thị chữ units -->
                 </div>
-                <div class="span4">Payable</div>
+                <div class="span4">Thành tiền</div>
                 <div class="card__amount">
                     <span>${product.payable}</span>
                 </div>
@@ -64,7 +64,7 @@ const loadProducts = async () => {
         `;
 
         document.getElementById('home').innerHTML += x;
-        document.getElementById('2').innerHTML = `CHECKOUT $${payable}`;
+        document.getElementById('2').innerHTML = `TỔNG THANH TOÁN $${payable}`;
         document.getElementById('weight').innerHTML = `TỔNG KHỐI LƯỢNG: ${totalWeight} g`;
         document.getElementById('weight').style.display = "block";
         
