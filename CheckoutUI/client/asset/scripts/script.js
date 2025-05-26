@@ -31,8 +31,11 @@ const loadProducts = async () => {
         $("#2").css("display", "grid");
 
         var payable = 0;
+        var totalWeight = 0;
+
         for (let product of products) {
             payable += parseFloat(product.payable);
+            totalWeight += parseFloat(product.total_weight || 0);  // Tính tổng khối lượng
         }
 
         var product = products.pop();
@@ -56,16 +59,21 @@ const loadProducts = async () => {
                 <div class="card__amount">
                     <span>${product.payable}</span>
                 </div>
-                <div class="span5">Weight</div>
-                <div class="card__weight">
-                    <span>${product.total_weight || 0} g</span>
-                </div>
             </div>
         </section>
         `;
 
+        // Render sản phẩm
         document.getElementById('home').innerHTML += x;
-        document.getElementById('2').innerHTML = "CHECKOUT $" + payable;
+
+        // Cập nhật checkout và khối lượng tổng
+        document.getElementById('2').innerHTML = `
+            CHECKOUT $${payable}
+            <div style="margin-top: 10px; font-weight: bold; color: #555; font-size: 14px;">
+                TỔNG KHỐI LƯỢNG: ${totalWeight} g
+            </div>
+        `;
+
         InitialCount += 1;
     }
 };
