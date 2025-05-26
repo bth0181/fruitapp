@@ -64,9 +64,10 @@ const loadProducts = async () => {
         `;
 
         document.getElementById('home').innerHTML += x;
-        document.getElementById('2').innerHTML = `TỔNG THANH TOÁN $${payable}`;
-        document.getElementById('weight').innerHTML = `TỔNG KHỐI LƯỢNG: ${totalWeight} g`;
-        document.getElementById('weight').style.display = "block";
+        document.getElementById('2').innerHTML = `
+    <div class="summary-box">TỔNG THANH TOÁN: ${payable} VND</div>
+    <div class="summary-box">TỔNG KHỐI LƯỢNG: ${totalWeight} g</div>
+`;
         
         InitialCount += 1;
     }
