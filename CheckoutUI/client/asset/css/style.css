@@ -398,28 +398,3 @@ main {
         box-shadow: 0.2em -0.2em 0 0 currentcolor;
     }
 }
-
-.card__unit span::after {
-    content: "";
-}
-
-/* Ô hiển thị tổng khối lượng */
-.total-weight-box {
-    display: inline-block;
-    margin-bottom: 12px;
-    font-size: 14px;
-    font-weight: 700;
-    padding: 12px 20px;
-    border-radius: 25px;
-    text-align: center;
-    background: #ecf0f3;
-    color: #02c8db;
-    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
-}
-
-/* Bố cục căn giữa cho ô tổng khối lượng và nút */
-#2 {
-    display: grid;
-    place-items: center;
-    gap: 10px;
-}
