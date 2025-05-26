@@ -64,15 +64,10 @@ const loadProducts = async () => {
         `;
 
         document.getElementById('home').innerHTML += x;
-
-        // Giao diện TỔNG KHỐI LƯỢNG trong ô
-        document.getElementById('2').innerHTML = `
-            <div class="card__amount" style="margin-bottom: 10px; font-size: 14px;">
-                TỔNG KHỐI LƯỢNG: ${totalWeight} G
-            </div>
-            <button class="checkout" onclick="checkout()">CHECKOUT $${payable}</button>
-        `;
-
+        document.getElementById('2').innerHTML = `CHECKOUT $${payable}`;
+        document.getElementById('weight').innerHTML = `TỔNG KHỐI LƯỢNG: ${totalWeight} g`;
+        document.getElementById('weight').style.display = "block";
+        
         InitialCount += 1;
     }
 };
