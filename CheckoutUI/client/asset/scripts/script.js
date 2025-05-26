@@ -88,6 +88,7 @@ const checkout = async () => {
 
     $("#home").css("display", "none");
     $("#final").css("display", "none");
+    $("#weight").css("display", "none");
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 
     $('#image').attr('src', qrUrl);
