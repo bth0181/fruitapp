@@ -19,15 +19,17 @@
 
 <body>
     <!-- Animation chờ -->
-    <div class="lottie" id="1" style="text-align: center;">
+    <div class="lottie" id="1" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
         <dotlottie-player
             src="https://lottie.host/1e7069dd-f1b4-46e6-b206-13791080505f/7kc90AGKyW.lottie"
             background="transparent"
             speed="1"
-            style="width: 300px; height: 300px"
+            style="width: 200px; height: 200px; margin-bottom: 20px;"
             loop autoplay>
         </dotlottie-player>
-        <div class="text">VUI LÒNG ĐẶT TRÁI CÂY LÊN BÀN CÂN ĐỂ THANH TOÁN!</div>
+        <div class="text" style="font-size: 18px; text-align: center; font-weight: 600;">
+            VUI LÒNG ĐẶT TRÁI CÂY LÊN BÀN CÂN ĐỂ THANH TOÁN!
+        </div>
     </div>
 
     <!-- Main sản phẩm -->
@@ -55,7 +57,7 @@
         </lottie-player>
     </div>
 
-    <!-- Tự động load sản phẩm mỗi 100ms -->
+    <!-- Tự động load sản phẩm -->
     <script>
         window.onload = () => {
             setInterval(function () {
