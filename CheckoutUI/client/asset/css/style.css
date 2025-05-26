@@ -398,3 +398,15 @@ main {
         box-shadow: 0.2em -0.2em 0 0 currentcolor;
     }
 }
+
+.total-weight-box {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #02c8db;
+    background: #ecf0f3;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
